@@ -1,0 +1,247 @@
+/* === RESPONSIVIDADE === */
+/* Large Tablets / Small Desktops (992px - 1199px) */
+@media screen and (max-width: 1199px) {
+    .container {
+        width: 95%;
+        max-width: 960px;
+    }
+
+    .filters {
+        justify-content: center;
+    }
+}
+
+/* Tablets (768px - 991px) */
+@media screen and (max-width: 991px) {
+    :root {
+        --spacing-xl: 25px;
+        --spacing-lg: 18px;
+        --spacing-md: 12px;
+    }
+
+    .container {
+        width: 96%;
+        padding: var(--spacing-lg);
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Ajuste do input de tarefas */
+    .input-area {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Input de texto ocupa linha inteira */
+    #todoInput {
+        grid-column: 1 / -1;
+    }
+
+    /* Data e prioridade lado a lado */
+    #prioritySelect {
+        width: 100%;
+    }
+
+    #dateInput {
+        width: 100%;
+    }
+
+    /* Botão de adicionar ocupa linha inteira */
+    #addButton {
+        grid-column: 1 / -1;
+        margin-top: var(--spacing-sm);
+    }
+
+    /* Ajuste dos filtros */
+    .filters {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .filter-btn {
+        width: 100%;
+        text-align: center;
+        padding: 10px 5px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablets Menores / Celulares Grandes (576px - 767px) */
+@media screen and (max-width: 767px) {
+    :root {
+        --spacing-xl: 20px;
+        --spacing-lg: 15px;
+        --spacing-md: 10px;
+    }
+
+    body {
+        padding: var(--spacing-sm);
+    }
+
+    .container {
+        width: 100%;
+        padding: var(--spacing-md);
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* Reorganização dos filtros */
+    .filters {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* Lista de tarefas */
+    .todo-item {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .task-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .todo-text {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .deadline {
+        font-size: 0.85rem;
+        opacity: 0.8;
+    }
+
+    .task-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: var(--spacing-sm);
+    }
+
+    /* Footer ajustado */
+    .footer-signature {
+        padding: var(--spacing-md) 0;
+    }
+
+    .social-links {
+        gap: var(--spacing-lg);
+    }
+}
+
+/* Celulares (até 575px) */
+@media screen and (max-width: 575px) {
+    :root {
+        --spacing-xl: 15px;
+        --spacing-lg: 12px;
+        --spacing-md: 8px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Input area em coluna única */
+    .input-area {
+        grid-template-columns: 1fr;
+    }
+
+    #todoInput,
+    #prioritySelect,
+    #dateInput,
+    #addButton {
+        grid-column: 1;
+    }
+
+    /* Ajuste dos botões de filtro */
+    .filters {
+        gap: 6px;
+    }
+
+    .filter-btn {
+        padding: 8px 5px;
+        font-size: 0.8rem;
+    }
+
+    /* Tarefa mais compacta */
+    .todo-item {
+        padding: var(--spacing-sm);
+    }
+
+    .todo-text {
+        font-size: 0.9rem;
+    }
+
+    .deadline {
+        font-size: 0.8rem;
+    }
+
+    .task-actions button {
+        padding: 6px;
+    }
+
+    /* Footer mais compacto */
+    .creator-signature {
+        font-size: 0.75rem;
+    }
+
+    .social-links {
+        gap: var(--spacing-md);
+    }
+
+    .social-link {
+        font-size: 1.1rem;
+    }
+}
+
+/* Ajustes para dispositivos muito pequenos */
+@media screen and (max-width: 360px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    .filter-btn {
+        font-size: 0.75rem;
+        padding: 6px 4px;
+    }
+}
+
+/* Ajustes de altura para modo paisagem em dispositivos móveis */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    .container {
+        height: auto;
+        min-height: calc(100vh - 100px);
+    }
+
+    .todo-item {
+        margin-bottom: 6px;
+    }
+
+    h1 {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .filters,
+    .input-area {
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+/* Melhorias de Performance */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
