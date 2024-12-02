@@ -113,12 +113,13 @@ h1 {
 /* Área de Input */
 .input-area {
     display: flex;
+    flex-direction: column;
     gap: 15px;
     margin-bottom: 20px;
 }
 
 input[type="text"] {
-    flex: 1;
+    width: 100%;
     padding: 12px 15px;
     border: 1px solid rgba(0, 255, 255, 0.2);
     border-radius: 8px;
@@ -127,7 +128,29 @@ input[type="text"] {
     font-family: 'Orbitron', sans-serif;
 }
 
-select, button, input[type="datetime-local"] {
+.controls-container {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+#prioritySelect,
+#dateInput,
+#addButton {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(2, 12, 27, 0.9);
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+}
+
+select, 
+input[type="datetime-local"],
+button {
+    width: calc(33.333% - 10px); /* Distribuição igual com pequeno espaçamento */
     padding: 12px 15px;
     border: 1px solid rgba(0, 255, 255, 0.2);
     border-radius: 8px;
@@ -153,6 +176,43 @@ select, button, input[type="datetime-local"] {
     border-radius: 8px;
     margin-bottom: 15px;
     padding: 15px;
+    position: relative;
+}
+
+.task-main {
+    padding-right: 100px; /* Espaço para os botões */
+}
+
+/* Container para o texto e data da tarefa */
+.task-info {
+    flex: 1;
+}
+
+/* Estilo para os botões de ação */
+.task-actions {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.complete-btn,
+.delete-btn {
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.complete-btn:hover,
+.delete-btn:hover {
+    background: rgba(0, 255, 255, 0.1);
 }
 
 /* Prioridades */

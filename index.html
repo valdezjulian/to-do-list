@@ -38,14 +38,21 @@
 
         <!-- Área de Input -->
         <div class="input-area">
+            <!-- Input de texto em uma linha -->
             <input type="text" id="todoInput" placeholder="Nova tarefa...">
-            <select id="prioritySelect">
-                <option value="normal">NORMAL</option>
-                <option value="alerta">ALERTA</option>
-                <option value="critico">CRÍTICO</option>
-            </select>
-            <input type="datetime-local" id="dateInput" class="flatpickr" placeholder="Calendario">
-            <button id="addButton">EXECUTAR</button>
+            
+            <!-- Container para os três elementos -->
+            <div class="controls-container">
+                <select id="prioritySelect">
+                    <option value="normal">NORMAL</option>
+                    <option value="alerta">ALERTA</option>
+                    <option value="critico">CRÍTICO</option>
+                </select>
+                
+                <input type="datetime-local" id="dateInput" class="flatpickr" placeholder="Calendario">
+                
+                <button id="addButton">EXECUTAR</button>
+            </div>
         </div>
 
         <!-- Lista de Tarefas -->
